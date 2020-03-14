@@ -1,1 +1,1 @@
-# Hive
+**Hive** - Hive is an ETL and data warehouse tool on top of Hadoop ecosystem and used for processing structured and semi structured data. Hive is a database present in Hadoop ecosystem performs DDL and DML operations, and it provides flexible query language such as HQL for better querying and processing of data.
