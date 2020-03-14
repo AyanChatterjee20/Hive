@@ -1,0 +1,86 @@
+[cloudera@quickstart hive_project]$ hive -f country_zone.hql
+
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j.properties
+OK
+Time taken: 0.862 seconds
+OK
+Time taken: 0.318 seconds
+OK
+Time taken: 0.372 seconds
+OK
+Time taken: 0.269 seconds
+OK
+Time taken: 0.493 seconds
+Added [zone.jar] to class path
+Added resources: [zone.jar]
+OK
+Time taken: 0.043 seconds
+OK
+Time taken: 0.322 seconds
+Query ID = cloudera_20200314115454_a726ace2-5727-4e49-814c-755bac651a57
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1581487397453_0120, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1581487397453_0120/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1581487397453_0120
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+2020-03-14 11:54:48,159 Stage-1 map = 0%,  reduce = 0%
+2020-03-14 11:55:03,880 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 4.02 sec
+MapReduce Total cumulative CPU time: 4 seconds 20 msec
+Ended Job = job_1581487397453_0120
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/hive_project.db/country_details/.hive-staging_hive_2020-03-14_11-54-27_198_5105879834619185288-1/-ext-10000
+Loading data to table hive_project.country_details partition (zone=null)
+	 Time taken for load dynamic partitions : 697
+	Loading partition {zone=NW}
+	Loading partition {zone=SE}
+	Loading partition {zone=SW}
+	Loading partition {zone=NE}
+	 Time taken for adding to write entity : 15
+Partition hive_project.country_details{zone=NE} stats: [numFiles=1, numRows=91, totalSize=8889, rawDataSize=0]
+Partition hive_project.country_details{zone=NW} stats: [numFiles=1, numRows=16, totalSize=3027, rawDataSize=0]
+Partition hive_project.country_details{zone=SE} stats: [numFiles=1, numRows=29, totalSize=4062, rawDataSize=0]
+Partition hive_project.country_details{zone=SW} stats: [numFiles=1, numRows=58, totalSize=6395, rawDataSize=0]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1   Cumulative CPU: 4.02 sec   HDFS Read: 25447 HDFS Write: 22595 SUCCESS
+Total MapReduce CPU Time Spent: 4 seconds 20 msec
+OK
+country	landmass	area	population	language	relegion	bars	stripes	colours	red	green	blue	gold	white	black	orange	mainhue	circles	crosses	saltires	quarters	sunstars	crescent	triangle	icon	animate	text	topleft	botright	zone
+Time taken: 39.583 seconds
+Query ID = cloudera_20200314115555_f433be88-1ef1-4411-b15e-1af465756198
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1581487397453_0121, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1581487397453_0121/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1581487397453_0121
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2020-03-14 11:55:20,170 Stage-1 map = 0%,  reduce = 0%
+2020-03-14 11:55:32,996 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 3.35 sec
+2020-03-14 11:55:49,728 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 6.52 sec
+MapReduce Total cumulative CPU time: 6 seconds 520 msec
+Ended Job = job_1581487397453_0121
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/hive_project.db/country_zone
+Table hive_project.country_zone stats: [numFiles=1, numRows=4, totalSize=265, rawDataSize=0]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 6.52 sec   HDFS Read: 56005 HDFS Write: 329 SUCCESS
+Total MapReduce CPU Time Spent: 6 seconds 520 msec
+OK
+zone	_c1
+Time taken: 44.711 seconds
+OK
+country_zone.zone	country_zone._c1
+NE	91
+NW	16
+SE	29
+SW	58
+Time taken: 0.146 seconds, Fetched: 4 row(s)
+WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
+WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
