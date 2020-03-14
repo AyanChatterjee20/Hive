@@ -1,0 +1,113 @@
+[cloudera@quickstart hive_project]$ hive -f country_maxArea_NE.hql
+
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j.properties
+OK
+Time taken: 0.891 seconds
+OK
+Time taken: 0.359 seconds
+OK
+Time taken: 0.414 seconds
+OK
+Time taken: 0.361 seconds
+OK
+Time taken: 0.147 seconds
+OK
+Time taken: 0.993 seconds
+Added [zone.jar] to class path
+Added resources: [zone.jar]
+OK
+Time taken: 0.037 seconds
+OK
+Time taken: 0.396 seconds
+Query ID = cloudera_20200314120101_37080295-a1fe-4ed1-b7e3-247cf406e0cf
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1581487397453_0122, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1581487397453_0122/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1581487397453_0122
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+2020-03-14 12:01:34,874 Stage-1 map = 0%,  reduce = 0%
+2020-03-14 12:01:48,072 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 3.09 sec
+MapReduce Total cumulative CPU time: 3 seconds 90 msec
+Ended Job = job_1581487397453_0122
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/hive_project.db/country_details/.hive-staging_hive_2020-03-14_12-01-15_073_8532635031779785629-1/-ext-10000
+Loading data to table hive_project.country_details partition (zone=null)
+	 Time taken for load dynamic partitions : 1119
+	Loading partition {zone=NW}
+	Loading partition {zone=NE}
+	Loading partition {zone=SE}
+	Loading partition {zone=SW}
+	 Time taken for adding to write entity : 34
+Partition hive_project.country_details{zone=NE} stats: [numFiles=1, numRows=91, totalSize=8889, rawDataSize=0]
+Partition hive_project.country_details{zone=NW} stats: [numFiles=1, numRows=16, totalSize=3027, rawDataSize=0]
+Partition hive_project.country_details{zone=SE} stats: [numFiles=1, numRows=29, totalSize=4062, rawDataSize=0]
+Partition hive_project.country_details{zone=SW} stats: [numFiles=1, numRows=58, totalSize=6395, rawDataSize=0]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1   Cumulative CPU: 3.09 sec   HDFS Read: 25435 HDFS Write: 22595 SUCCESS
+Total MapReduce CPU Time Spent: 3 seconds 90 msec
+OK
+country	landmass	area	population	language	relegion	bars	stripes	colours	red	green	blue	gold	white	black	orange	mainhue	circles	crosses	saltires	quarters	sunstars	crescent	triangle	icon	animate	text	topleft	botright	zone
+Time taken: 36.672 seconds
+Query ID = cloudera_20200314120101_df9dc480-53f7-404b-a085-d445a0d0b738
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1581487397453_0123, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1581487397453_0123/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1581487397453_0123
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2020-03-14 12:02:10,370 Stage-1 map = 0%,  reduce = 0%
+2020-03-14 12:02:24,516 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.78 sec
+2020-03-14 12:02:39,819 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 5.78 sec
+MapReduce Total cumulative CPU time: 5 seconds 780 msec
+Ended Job = job_1581487397453_0123
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/hive_project.db/tmp_country_maxarea_ne
+Table hive_project.tmp_country_maxarea_ne stats: [numFiles=1, numRows=1, totalSize=258, rawDataSize=0]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 5.78 sec   HDFS Read: 28044 HDFS Write: 332 SUCCESS
+Total MapReduce CPU Time Spent: 5 seconds 780 msec
+OK
+zone	area
+Time taken: 49.51 seconds
+Query ID = cloudera_20200314120202_3e6adb86-90c0-45fd-98e1-c5a02113961e
+Total jobs = 1
+Execution log at: /tmp/cloudera/cloudera_20200314120202_3e6adb86-90c0-45fd-98e1-c5a02113961e.log
+2020-03-14 12:02:53	Starting to launch local task to process map join;	maximum memory = 1013645312
+2020-03-14 12:02:56	Dump the side-table for tag: 1 with group count: 1 into file: file:/tmp/cloudera/409b2a8a-76ca-401b-922e-f697dbdfb485/hive_2020-03-14_12-02-41_275_7078457561268706395-1/-local-10003/HashTable-Stage-4/MapJoin-mapfile01--.hashtable
+2020-03-14 12:02:56	Uploaded 1 File to: file:/tmp/cloudera/409b2a8a-76ca-401b-922e-f697dbdfb485/hive_2020-03-14_12-02-41_275_7078457561268706395-1/-local-10003/HashTable-Stage-4/MapJoin-mapfile01--.hashtable (283 bytes)
+2020-03-14 12:02:56	End of local task; Time Taken: 3.244 sec.
+Execution completed successfully
+MapredLocal task succeeded
+Launching Job 1 out of 1
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1581487397453_0124, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1581487397453_0124/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1581487397453_0124
+Hadoop job information for Stage-4: number of mappers: 1; number of reducers: 0
+2020-03-14 12:03:12,570 Stage-4 map = 0%,  reduce = 0%
+2020-03-14 12:03:28,984 Stage-4 map = 100%,  reduce = 0%, Cumulative CPU 4.39 sec
+MapReduce Total cumulative CPU time: 4 seconds 390 msec
+Ended Job = job_1581487397453_0124
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/hive_project.db/country_maxarea_ne
+Table hive_project.country_maxarea_ne stats: [numFiles=1, numRows=1, totalSize=319, rawDataSize=0]
+MapReduce Jobs Launched: 
+Stage-Stage-4: Map: 1   Cumulative CPU: 4.39 sec   HDFS Read: 53757 HDFS Write: 389 SUCCESS
+Total MapReduce CPU Time Spent: 4 seconds 390 msec
+OK
+c.country	t.zone	t.area
+Time taken: 49.216 seconds
+OK
+Time taken: 0.187 seconds
+OK
+country_maxarea_ne.country	country_maxarea_ne.zone	country_maxarea_ne.area
+USSR	NE	22402
+Time taken: 0.205 seconds, Fetched: 1 row(s)
+WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
+WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
