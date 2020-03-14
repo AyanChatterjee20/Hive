@@ -1,0 +1,109 @@
+[cloudera@quickstart hive_project]$ hive -f language_country.hql
+
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j.properties
+OK
+Time taken: 0.899 seconds
+OK
+Time taken: 0.389 seconds
+OK
+Time taken: 0.315 seconds
+OK
+Time taken: 0.264 seconds
+OK
+Time taken: 0.558 seconds
+Added [language.jar] to class path
+Added resources: [language.jar]
+OK
+Time taken: 0.065 seconds
+OK
+Time taken: 0.164 seconds
+Query ID = cloudera_20200314121616_4a43e453-840d-40d9-9702-c6cc0f730ad8
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks determined at compile time: 10
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1581487397453_0128, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1581487397453_0128/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1581487397453_0128
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 10
+2020-03-14 12:16:25,944 Stage-1 map = 0%,  reduce = 0%
+2020-03-14 12:16:41,599 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 3.28 sec
+2020-03-14 12:17:42,693 Stage-1 map = 100%,  reduce = 7%, Cumulative CPU 4.54 sec
+2020-03-14 12:17:52,444 Stage-1 map = 100%,  reduce = 13%, Cumulative CPU 6.11 sec
+2020-03-14 12:17:57,089 Stage-1 map = 100%,  reduce = 20%, Cumulative CPU 7.76 sec
+2020-03-14 12:18:00,525 Stage-1 map = 100%,  reduce = 27%, Cumulative CPU 9.4 sec
+2020-03-14 12:18:02,208 Stage-1 map = 100%,  reduce = 37%, Cumulative CPU 13.93 sec
+2020-03-14 12:18:03,817 Stage-1 map = 100%,  reduce = 43%, Cumulative CPU 15.55 sec
+2020-03-14 12:18:05,391 Stage-1 map = 100%,  reduce = 47%, Cumulative CPU 17.32 sec
+2020-03-14 12:18:10,186 Stage-1 map = 100%,  reduce = 50%, Cumulative CPU 19.74 sec
+2020-03-14 12:18:11,910 Stage-1 map = 100%,  reduce = 53%, Cumulative CPU 19.74 sec
+2020-03-14 12:18:13,537 Stage-1 map = 100%,  reduce = 57%, Cumulative CPU 22.21 sec
+2020-03-14 12:18:16,962 Stage-1 map = 100%,  reduce = 60%, Cumulative CPU 26.27 sec
+2020-03-14 12:19:09,984 Stage-1 map = 100%,  reduce = 67%, Cumulative CPU 28.33 sec
+2020-03-14 12:19:15,510 Stage-1 map = 100%,  reduce = 73%, Cumulative CPU 29.36 sec
+2020-03-14 12:19:22,130 Stage-1 map = 100%,  reduce = 87%, Cumulative CPU 31.29 sec
+2020-03-14 12:19:38,943 Stage-1 map = 100%,  reduce = 97%, Cumulative CPU 38.28 sec
+2020-03-14 12:19:40,317 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 41.68 sec
+MapReduce Total cumulative CPU time: 43 seconds 10 msec
+Ended Job = job_1581487397453_0128
+Loading data to table hive_project.country_details
+Table hive_project.country_details stats: [numFiles=10, numRows=194, totalSize=31237, rawDataSize=5820]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1  Reduce: 10   Cumulative CPU: 43.01 sec   HDFS Read: 108559 HDFS Write: 31966 SUCCESS
+Total MapReduce CPU Time Spent: 43 seconds 10 msec
+OK
+country	landmass	zone	area	population	_c5	relegion	bars	stripes	colours	red	green	blue	gold	white	black	orange	mainhue	circles	crosses	saltires	quarters	sunstars	crescent	triangle	icon	animate	text	topleft	botright
+Time taken: 222.951 seconds
+Query ID = cloudera_20200314121919_11a1fa15-f032-483b-8853-bbff2215c02f
+Total jobs = 2
+Launching Job 1 out of 2
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1581487397453_0129, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1581487397453_0129/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1581487397453_0129
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2020-03-14 12:20:03,082 Stage-1 map = 0%,  reduce = 0%
+2020-03-14 12:20:18,527 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 3.31 sec
+2020-03-14 12:20:33,893 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 5.88 sec
+MapReduce Total cumulative CPU time: 5 seconds 880 msec
+Ended Job = job_1581487397453_0129
+Launching Job 2 out of 2
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1581487397453_0130, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1581487397453_0130/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1581487397453_0130
+Hadoop job information for Stage-2: number of mappers: 1; number of reducers: 1
+2020-03-14 12:20:49,919 Stage-2 map = 0%,  reduce = 0%
+2020-03-14 12:21:04,312 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 1.98 sec
+2020-03-14 12:21:19,588 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 5.18 sec
+MapReduce Total cumulative CPU time: 5 seconds 180 msec
+Ended Job = job_1581487397453_0130
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/hive_project.db/language_country
+Table hive_project.language_country stats: [numFiles=1, numRows=1, totalSize=264, rawDataSize=0]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 5.88 sec   HDFS Read: 40946 HDFS Write: 381 SUCCESS
+Stage-Stage-2: Map: 1  Reduce: 1   Cumulative CPU: 5.18 sec   HDFS Read: 5489 HDFS Write: 332 SUCCESS
+Total MapReduce CPU Time Spent: 11 seconds 60 msec
+OK
+language	nocountry
+Time taken: 95.662 seconds
+OK
+language_country.language	language_country.nocountry
+OTHERS	46
+Time taken: 0.155 seconds, Fetched: 1 row(s)
+WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
+WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
