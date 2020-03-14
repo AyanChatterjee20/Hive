@@ -1,0 +1,87 @@
+[cloudera@quickstart hive_project]$ hive -f icon_text_country.hql
+
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j.properties
+OK
+Time taken: 0.87 seconds
+OK
+Time taken: 0.264 seconds
+OK
+Time taken: 0.176 seconds
+OK
+Time taken: 0.223 seconds
+OK
+Time taken: 0.501 seconds
+Added [Untitled.jar] to class path
+Added resources: [Untitled.jar]
+OK
+Time taken: 0.017 seconds
+Added [text.jar] to class path
+Added resources: [text.jar]
+OK
+Time taken: 0.038 seconds
+OK
+Time taken: 0.138 seconds
+Query ID = cloudera_20200314123333_b78ca63f-25b9-484b-87d2-3fe97de919d6
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks determined at compile time: 2
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1581487397453_0132, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1581487397453_0132/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1581487397453_0132
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 2
+2020-03-14 12:34:01,224 Stage-1 map = 0%,  reduce = 0%
+2020-03-14 12:34:14,167 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.35 sec
+2020-03-14 12:34:45,911 Stage-1 map = 100%,  reduce = 50%, Cumulative CPU 6.24 sec
+2020-03-14 12:34:47,147 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 9.95 sec
+MapReduce Total cumulative CPU time: 9 seconds 950 msec
+Ended Job = job_1581487397453_0132
+Loading data to table hive_project.country_details partition (text=null)
+	 Time taken for load dynamic partitions : 598
+	Loading partition {text=1}
+	Loading partition {text=0}
+	 Time taken for adding to write entity : 15
+Partition hive_project.country_details{text=0} stats: [numFiles=2, numRows=178, totalSize=12644, rawDataSize=5162]
+Partition hive_project.country_details{text=1} stats: [numFiles=2, numRows=16, totalSize=7947, rawDataSize=464]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1  Reduce: 2   Cumulative CPU: 9.95 sec   HDFS Read: 39927 HDFS Write: 20887 SUCCESS
+Total MapReduce CPU Time Spent: 9 seconds 950 msec
+OK
+country	landmass	zone	area	population	language	relegion	bars	stripes	colours	red	green	blue	gold	white	black	orange	mainhue	circles	crosses	saltires	quarters	sunstars	crescent	triangle	icon	animate	topleft	botright	text
+Time taken: 70.002 seconds
+Query ID = cloudera_20200314123434_bb0c6245-14a6-4177-adff-c5b9debd89df
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1581487397453_0133, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1581487397453_0133/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1581487397453_0133
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2020-03-14 12:35:08,327 Stage-1 map = 0%,  reduce = 0%
+2020-03-14 12:35:22,287 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 3.36 sec
+2020-03-14 12:35:37,503 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 6.11 sec
+MapReduce Total cumulative CPU time: 6 seconds 110 msec
+Ended Job = job_1581487397453_0133
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/hive_project.db/icon_text_country
+Table hive_project.icon_text_country stats: [numFiles=1, numRows=1, totalSize=363, rawDataSize=0]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 6.11 sec   HDFS Read: 21283 HDFS Write: 432 SUCCESS
+Total MapReduce CPU Time Spent: 6 seconds 110 msec
+OK
+icon	text	nocountry
+Time taken: 48.133 seconds
+OK
+icon_text_country.icon	icon_text_country.text	icon_text_country.nocountry
+There is icon in the Flag	Text is there in the Flag	13
+Time taken: 0.175 seconds, Fetched: 1 row(s)
+WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
+WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
