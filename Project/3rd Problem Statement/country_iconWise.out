@@ -1,0 +1,48 @@
+[cloudera@quickstart hive_project]$ hive -f country_iconWise.hql
+
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j.properties
+OK
+Time taken: 0.812 seconds
+OK
+Time taken: 0.364 seconds
+OK
+Time taken: 0.16 seconds
+OK
+Time taken: 0.482 seconds
+Added [Untitled.jar] to class path
+Added resources: [Untitled.jar]
+OK
+Time taken: 0.036 seconds
+Query ID = cloudera_20200314113838_25747775-ac60-449c-bee3-d114a5e68ec7
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1581487397453_0118, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1581487397453_0118/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1581487397453_0118
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2020-03-14 11:38:21,702 Stage-1 map = 0%,  reduce = 0%
+2020-03-14 11:38:36,231 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.27 sec
+2020-03-14 11:38:52,897 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 5.87 sec
+MapReduce Total cumulative CPU time: 5 seconds 870 msec
+Ended Job = job_1581487397453_0118
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/hive_project.db/country_iconwise
+Table hive_project.country_iconwise stats: [numFiles=1, numRows=2, totalSize=305, rawDataSize=0]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 5.87 sec   HDFS Read: 26354 HDFS Write: 373 SUCCESS
+Total MapReduce CPU Time Spent: 5 seconds 870 msec
+OK
+_c0	_c1
+Time taken: 52.888 seconds
+OK
+country_iconwise._c0	country_iconwise._c1
+145	There is no icon in the Flag
+49	There is icon in the Flag
+Time taken: 0.212 seconds, Fetched: 2 row(s)
+WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
+WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
