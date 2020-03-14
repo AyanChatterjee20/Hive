@@ -5,7 +5,7 @@ Hive Partitions is a way to organizes tables into partitions by dividing tables 
 Partition is helpful when the table has one or more Partition keys. Partition keys are basic elements for determining how the data is stored in the table.
 
 
-Bucketing in Hive. The bucketing in Hive is a data organizing technique. It is similar to partitioning in Hive with an added functionality that it divides large datasets into more manageable parts known as buckets.
+Bucketing in Hive is a data organizing technique. It is similar to partitioning in Hive with an added functionality that it divides large datasets into more manageable parts known as buckets.
 
 
 Partitioning helps in elimination of data, if used in WHERE clause, where as bucketing helps in organizing data in each partition into multiple files, so as same set of data is always written in same bucket.
