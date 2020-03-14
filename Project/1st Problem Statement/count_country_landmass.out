@@ -1,0 +1,93 @@
+[cloudera@quickstart hive_project]$ hive -f count_country_landmass.hql
+
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j.properties
+OK
+Time taken: 0.989 seconds
+OK
+Time taken: 4.43 seconds
+OK
+Time taken: 15.138 seconds
+OK
+Time taken: 0.245 seconds
+OK
+Time taken: 1.742 seconds
+Added [landmass.jar] to class path
+Added resources: [landmass.jar]
+OK
+Time taken: 0.035 seconds
+OK
+Time taken: 1.698 seconds
+Query ID = cloudera_20200314105454_19162f4f-2bc8-4962-9d91-b186eb7ee489
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1581487397453_0112, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1581487397453_0112/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1581487397453_0112
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+2020-03-14 10:55:20,008 Stage-1 map = 0%,  reduce = 0%
+2020-03-14 10:55:41,403 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 4.19 sec
+MapReduce Total cumulative CPU time: 4 seconds 190 msec
+Ended Job = job_1581487397453_0112
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/hive_project.db/country_details/.hive-staging_hive_2020-03-14_10-54-42_196_4213888663058809816-1/-ext-10000
+Loading data to table hive_project.country_details partition (landmass=null)
+	 Time taken for load dynamic partitions : 2951
+	Loading partition {landmass=OCENIA}
+	Loading partition {landmass=EUROPE}
+	Loading partition {landmass=ASIA}
+	Loading partition {landmass=N.AMERICA}
+	Loading partition {landmass=AFRICA}
+	Loading partition {landmass=S.AMERICA}
+	 Time taken for adding to write entity : 22
+Partition hive_project.country_details{landmass=AFRICA} stats: [numFiles=1, numRows=52, totalSize=5940, rawDataSize=0]
+Partition hive_project.country_details{landmass=ASIA} stats: [numFiles=1, numRows=39, totalSize=4837, rawDataSize=0]
+Partition hive_project.country_details{landmass=EUROPE} stats: [numFiles=1, numRows=35, totalSize=4520, rawDataSize=0]
+Partition hive_project.country_details{landmass=N.AMERICA} stats: [numFiles=1, numRows=31, totalSize=4288, rawDataSize=0]
+Partition hive_project.country_details{landmass=OCENIA} stats: [numFiles=1, numRows=20, totalSize=3363, rawDataSize=0]
+Partition hive_project.country_details{landmass=S.AMERICA} stats: [numFiles=1, numRows=17, totalSize=3120, rawDataSize=0]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1   Cumulative CPU: 4.19 sec   HDFS Read: 25470 HDFS Write: 26440 SUCCESS
+Total MapReduce CPU Time Spent: 4 seconds 190 msec
+OK
+country	zone	area	population	language	relegion	bars	stripes	colours	red	green	blue	gold	white	black	orange	mainhue	circles	crosses	saltires	quarters	sunstars	crescent	triangle	icon	animate	text	topleft	botright	_c29
+Time taken: 65.337 seconds
+Query ID = cloudera_20200314105555_6816d2fc-38bc-47fc-8071-e0203f1fad6c
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1581487397453_0113, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1581487397453_0113/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1581487397453_0113
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2020-03-14 10:56:08,527 Stage-1 map = 0%,  reduce = 0%
+2020-03-14 10:56:25,164 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 4.23 sec
+2020-03-14 10:56:41,840 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 7.37 sec
+MapReduce Total cumulative CPU time: 7 seconds 370 msec
+Ended Job = job_1581487397453_0113
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/hive_project.db/count_country_landmass
+Table hive_project.count_country_landmass stats: [numFiles=1, numRows=6, totalSize=319, rawDataSize=0]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 7.37 sec   HDFS Read: 65155 HDFS Write: 393 SUCCESS
+Total MapReduce CPU Time Spent: 7 seconds 370 msec
+OK
+landmass	_c1
+Time taken: 55.803 seconds
+OK
+count_country_landmass.landmass	count_country_landmass._c1
+AFRICA	52
+ASIA	39
+EUROPE	35
+N.AMERICA	31
+OCENIA	20
+S.AMERICA	17
+Time taken: 0.117 seconds, Fetched: 6 row(s)
+WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
+WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
+[cloudera@quickstart hive_project]$ 
