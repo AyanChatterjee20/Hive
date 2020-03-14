@@ -1,0 +1,43 @@
+[cloudera@quickstart hive_project]$ hive -f circle_country.hql
+
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j.properties
+OK
+Time taken: 0.667 seconds
+OK
+Time taken: 0.32 seconds
+OK
+Time taken: 0.181 seconds
+OK
+Time taken: 0.531 seconds
+Query ID = cloudera_20200314122727_171ff4c5-f1dd-4278-a849-76ae6560b4b5
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1581487397453_0131, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1581487397453_0131/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1581487397453_0131
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2020-03-14 12:28:21,091 Stage-1 map = 0%,  reduce = 0%
+2020-03-14 12:28:34,184 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.34 sec
+2020-03-14 12:28:49,727 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 5.52 sec
+MapReduce Total cumulative CPU time: 5 seconds 520 msec
+Ended Job = job_1581487397453_0131
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/hive_project.db/circle_country
+Table hive_project.circle_country stats: [numFiles=1, numRows=1, totalSize=202, rawDataSize=0]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 5.52 sec   HDFS Read: 25633 HDFS Write: 268 SUCCESS
+Total MapReduce CPU Time Spent: 5 seconds 520 msec
+OK
+sumofallthecircle
+Time taken: 55.579 seconds
+OK
+circle_country.sumofallthecircle
+33
+Time taken: 0.151 seconds, Fetched: 1 row(s)
+WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
+WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
